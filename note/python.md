@@ -1,5 +1,7 @@
 ### python基础
 
+官方文档 https://docs.python.org/3/library/functions.html
+
 #### 关键字
 - pass 什么事都不做，相当于占位符，防止代码编译出错
 - None 相当于null
@@ -23,6 +25,7 @@
 - isinstance(val, type)—返回值True/False,考虑继承关系。
 - list(val) 转为list
 - range(val) 生成0 - val-1的序列
+- dir(className/object) 返回对应类或对象所有属性和方法的list
 
 #### 数据类型
 - 整数
@@ -134,7 +137,49 @@ for x in g:
 - 集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象
 - Python的for循环本质上就是通过不断调用next()函数实现的
 
+#### 函数式编程
+- 高阶函数
+    - 变量可以指向函数
+    ```python
+        abs(-10) # 10
+        f = abs
+        f(-10) # 10
+    ```
+    - 函数名也是变量
+    ```python
+    abs(-10) # 10
+    abs = 1
+    abs(-10) # typeError
+    ```
+    - 传入函数.既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数.
+    
+- 高阶函数实例
+  - map/reduce 
+    - map(func, *iterables) --> map object
+    - reduce(func, sequence[, initial]) -> value
+  - filter
+    -  filter(function or None, iterable) --> filter object
+  - sorted
+    - sorted(iterable, /, *, key=None, reverse=False)
+  
+- 返回函数
+  - 函数作为返回值:高阶函数除了可以接受函数作为参数外，还可以把函数作为结果值返回.
+  - 闭包,详细见 https://www.liaoxuefeng.com/wiki/1016959663602400/1017434209254976
+  
+- 匿名函数:在传入函数时，有时候不需要显式地定义函数，直接传入匿名函数更方便.
+```python
+#使用关键字lambda实现,在函数作为参数的场景下很常用,比如map
+f = lambda x : x * x
+f(10) #100
+```
 
+- **装饰器 decorator**:详细见 https://www.liaoxuefeng.com/wiki/1016959663602400/1017451662295584
+
+- 偏函数 functools.partial:把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单
+
+- 模块
+
+- 面向对象
 
 
 
