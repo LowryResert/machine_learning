@@ -1,3 +1,4 @@
 ### pandas
-read_csv(filename, names=[colName1,colName1,...])
-head(rowNums)
+Pandas 是 Python (opens new window)的核心数据分析支持库
+
+

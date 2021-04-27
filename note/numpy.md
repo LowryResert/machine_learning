@@ -1,3 +1,5 @@
+### numpy
+NumPy是Python中科学计算的基础包,核心是 ndarray 对象
 #### ndarray
 - 创建一个ndarray: `np.array(p_object, dtype=None, *args, **kwargs)`
 - 构造ndarray数据类型对象: `numpy.dtype(object, align, copy)`
@@ -21,7 +23,21 @@
   - numpy.arange(start, stop, step, dtype)
   - 生成等差数列: np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
   - 生成等比数列: np.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)
-- np切片和索引:
+- ndarry的运算
+  - a*b: 表示矩阵各个位置元素**对应相乘**, 其余运算符(如+,-,/等也是如此)
+  - a@b: 表示两矩阵进行**矩阵乘法**
+  - a@b = a.dot(b)
+  - ndarray.sum() 求总和
+  - ndarray.min() 求最小
+  - ndarray.max() 求最大
+  - 以上三个方法中可以填入axis参数,指定运算的'轴'(即第几维)
+- 通函数--NumPy提供熟悉的数学函数，例如sin，cos和exp。在NumPy中，这些被称为“通函数”（ufunc）。在NumPy中，这些函数在数组上按元素进行运算，产生一个数组作为输出。
+- np切片,索引和迭代:
+  - 对多维数组进行 迭代(Iterating)是相对于第一个轴(维度)完成的.
+    如果想要对数组中的每个元素执行操作，可以使用flat属性
+    `for element in ndarray.flat`
+  - python内置array取二维数组中元素为array[i][j], ndarray支持此种语法, 且额外添加ndarray[i, j]这样的语法形式.
+   不仅如此, ndarray[i][j]与ndarray[i, j]中的索引 i, j还支持切片的语法,例如ndarray[0:5, j]
   - ```python
     s = slice(start, end, step)  #来自标准库
     e = ndarray[s]
@@ -109,3 +125,7 @@
     - np.insert()
     - np.delete()
     - np.unique()
+- 数组的拷贝与视图
+  - a.view()
+  - a.base
+  - a.copy()
