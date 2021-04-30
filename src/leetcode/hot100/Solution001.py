@@ -1,7 +1,7 @@
 from typing import List
 
 
-def twoSum1(nums: List[int], target: int) -> List[int]:
+def two_sum1(nums: List[int], target: int) -> List[int]:
     n = len(nums)
     for i in range(n):
         for j in range(i + 1, n):
@@ -10,7 +10,7 @@ def twoSum1(nums: List[int], target: int) -> List[int]:
     return []
 
 
-def twoSum2(nums: List[int], target: int) -> List[int]:
+def two_sum2(nums: List[int], target: int) -> List[int]:
     hashtable = dict()
     for i, num in enumerate(nums):
         if target - num in hashtable:
@@ -19,4 +19,4 @@ def twoSum2(nums: List[int], target: int) -> List[int]:
     return []
 
 
-print(twoSum2([2, 7, 11, 15], 9))
+print(two_sum2([2, 7, 11, 15], 9))
